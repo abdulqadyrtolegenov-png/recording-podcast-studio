@@ -24,3 +24,16 @@ Open `index.html` in a browser, or use a local server such as VS Code Live Serve
 - Replace the demo email/phone and prices with approved details before publishing.
 - To satisfy the Figma visual-identity criterion, compare the page against the actual desktop (1440 px) and mobile (390 px) Figma frames and adjust spacing, colors, typography, and assets accordingly.
 - Use meaningful, small Git commits as work progresses (for example: `feat: add responsive navigation`, `feat: build studio service cards`, `feat: add booking form validation`, `style: add light theme`).
+
+## Technologies Used
+
+- HTML5 for page structure
+- CSS Grid and Flexbox for responsive layouts
+- JavaScript for mobile navigation, theme switching, and form validation
+
+## Features
+
+- Responsive design for desktop and mobile
+- Light and dark themes
+- Studio service cards
+- Booking form with required fields
