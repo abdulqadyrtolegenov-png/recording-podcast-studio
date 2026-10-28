@@ -1,53 +1,41 @@
-const menuButton = document.querySelector(".menu-toggle");
+const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
-const themeButton = document.querySelector(".theme-toggle");
-const themeLabel = document.querySelector(".theme-label");
+const themeButton = document.querySelector(".theme-button");
 const bookingForm = document.querySelector("#booking-form");
 const formMessage = document.querySelector("#form-message");
 const dateInput = document.querySelector("#date");
 
-if (menuButton && navLinks) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    navLinks.classList.toggle("is-open", !isOpen);
+menuButton.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  menuButton.setAttribute("aria-expanded", String(!isOpen));
+  navLinks.classList.toggle("open", !isOpen);
+});
+
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
   });
+});
 
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menuButton.setAttribute("aria-expanded", "false");
-      navLinks.classList.remove("is-open");
-    });
-  });
-}
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+  const isLight = document.body.classList.contains("light-theme");
+  themeButton.textContent = isLight ? "Dark Mode" : "Light Mode";
+  themeButton.setAttribute("aria-pressed", String(isLight));
+});
 
-if (themeButton) {
-  themeButton.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light-theme");
-    themeButton.setAttribute("aria-pressed", String(isLight));
-    themeLabel.textContent = isLight ? "Dark mode" : "Light mode";
-    themeButton.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
-  });
-}
+const now = new Date();
+dateInput.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 
-if (dateInput) {
-  const today = new Date();
-  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-    .toISOString().slice(0, 10);
-  dateInput.min = localToday;
-}
+bookingForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!bookingForm.checkValidity()) {
+    bookingForm.reportValidity();
+    return;
+  }
+  formMessage.textContent = "Thank you! Your request is ready. This demo does not send data to a server.";
+  bookingForm.reset();
+});
 
-if (bookingForm && formMessage) {
-  bookingForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!bookingForm.checkValidity()) {
-      bookingForm.reportValidity();
-      return;
-    }
-    formMessage.textContent = "Thanks! Your request is ready. This demo form does not send data to a server yet.";
-    bookingForm.reset();
-  });
-}
-
-const year = document.querySelector("#year");
-if (year) year.textContent = String(new Date().getFullYear());
+document.querySelector("#year").textContent = new Date().getFullYear();
