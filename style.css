@@ -92,7 +92,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero {
   min-height: 80vh; display: flex; align-items: center;
   background:
-    linear-gradient(180deg, rgba(10, 10, 20, 0.55), rgba(10, 10, 20, 0.9)),
+    linear-gradient(180deg, rgba(10, 10, 20, 0.3), rgba(10, 10, 20, 0.7)),
     url("url("hero.jpg")") center / cover no-repeat,
     linear-gradient(135deg, #1b0b3a, #04202e);
 }
