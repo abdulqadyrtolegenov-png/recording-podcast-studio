@@ -1,41 +1,44 @@
-const menuButton = document.querySelector(".menu-button");
-const navLinks = document.querySelector(".nav-links");
-const themeButton = document.querySelector(".theme-button");
-const bookingForm = document.querySelector("#booking-form");
-const formMessage = document.querySelector("#form-message");
-const dateInput = document.querySelector("#date");
+const root = document.documentElement;
+const menuButton = document.querySelector('.menu-button');
+const navLinks = document.getElementById('nav-links');
+const themeButton = document.querySelector('.theme-button');
+const form = document.getElementById('booking-form');
+const status = document.getElementById('form-status');
 
-menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  navLinks.classList.toggle("open", !isOpen);
+menuButton.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
 });
 
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-  });
-});
-
-themeButton.addEventListener("click", () => {
-  document.body.classList.toggle("light-theme");
-  const isLight = document.body.classList.contains("light-theme");
-  themeButton.textContent = isLight ? "Dark Mode" : "Light Mode";
-  themeButton.setAttribute("aria-pressed", String(isLight));
-});
-
-const now = new Date();
-dateInput.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-
-bookingForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!bookingForm.checkValidity()) {
-    bookingForm.reportValidity();
-    return;
+navLinks.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
   }
-  formMessage.textContent = "Thank you! Your request is ready. This demo does not send data to a server.";
-  bookingForm.reset();
 });
 
-document.querySelector("#year").textContent = new Date().getFullYear();
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  const light = theme === 'light';
+  themeButton.setAttribute('aria-pressed', String(light));
+  themeButton.textContent = light ? 'Switch to dark neon theme' : 'Switch to light theme';
+}
+
+let saved = 'dark';
+try { saved = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+applyTheme(saved);
+
+themeButton.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
+});
+
+const dateInput = document.getElementById('date');
+dateInput.min = new Date().toISOString().split('T')[0];
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  status.textContent = 'Request sent. We will contact you to confirm the time.';
+  form.reset();
+});
