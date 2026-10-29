@@ -99,7 +99,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 [data-theme="light"] .hero {
   background:
     linear-gradient(180deg, rgba(246, 245, 255, 0.75), rgba(246, 245, 255, 0.92)),
-    url("images/hero.jpg") center / cover no-repeat,
+    url("url("hero.jpg")") center / cover no-repeat,
     linear-gradient(135deg, #e6ddff, #d9f4ff);
 }
 .hero-content { padding-block: 4rem; }
