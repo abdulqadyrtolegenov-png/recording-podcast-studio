@@ -1,37 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SoundSpace Studio</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoundSpace Studio | Recording and Podcast Studio</title>
+  <meta name="description" content="Recording and podcast studio: equipment, services, prices and online booking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<header class="site-header"><nav class="container navbar" aria-label="Main navigation">
-<a class="logo" href="#home">SoundSpace <span>Studio</span></a>
-<button class="menu-button" aria-expanded="false" aria-controls="nav-links" type="button">Menu ☰</button>
-<ul class="nav-links" id="nav-links"><li><a href="#equipment">Equipment</a></li><li><a href="#services">Services</a></li><li><a href="#works">Our Works</a></li><li><a class="nav-book" href="#booking">Book a Session</a></li></ul>
-<button class="theme-button" type="button" aria-pressed="false">Light Mode</button>
-</nav></header>
+ 
+<header class="site-header">
+  <nav class="container navbar" aria-label="Main navigation">
+    <a class="logo" href="#home">
+      <svg class="wave-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M2 12h2M6 8v8M10 4v16M14 7v10M18 9v6M22 12h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>SoundSpace</span>
+    </a>
+    <a class="header-phone" href="tel:+77010000000">+7 701 000 00 00</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#equipment">Equipment</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#works">Our Works</a></li>
+      <li><a class="nav-book" href="#booking">Book Studio Time</a></li>
+    </ul>
+  </nav>
+</header>
+ 
 <main>
-<section class="hero container" id="home"><div>
-<p class="eyebrow">RECORDING • MIXING • PODCASTS</p><h1>Make your ideas <span>sound great.</span></h1>
-<p class="intro">A friendly studio for music, voice recordings, and podcasts. Bring your idea and we will help you record it.</p>
-<a class="button" href="#booking">Book a Session →</a>
-<div class="stats"><div><strong>24/7</strong><span>Creative space</span></div><div><strong>4.9/5</strong><span>Client rating</span></div><div><strong>1200+</strong><span>Sessions</span></div></div>
-</div><div class="hero-card"><div class="microphone">🎙️</div><h2>Good sound starts here.</h2><p>Comfortable rooms. Helpful engineers. Great results.</p></div></section>
-<section class="section container" id="equipment"><div class="section-title"><p class="eyebrow">OUR STUDIO</p><h2>Everything you need</h2><p>Simple tools and a quiet space to help you focus on your project.</p></div>
-<div class="card-grid"><article class="card"><span class="icon">🎧</span><h3>Quality Equipment</h3><p>Microphones and headphones for clear recordings.</p></article><article class="card"><span class="icon">🔇</span><h3>Quiet Rooms</h3><p>Acoustic treatment helps reduce unwanted noise.</p></article><article class="card"><span class="icon">🎚️</span><h3>Helpful Engineers</h3><p>Our team can help you record and mix your sound.</p></article></div></section>
-<section class="section services-section" id="services"><div class="container"><div class="section-title"><p class="eyebrow">OUR SERVICES</p><h2>Choose your session</h2><p>Pick the service that best fits your project.</p></div>
-<div class="card-grid"><article class="card"><div class="service-icon">🎤</div><h3>Vocal Recording</h3><p>Record vocals in a comfortable studio room.</p><p class="price">From <strong>$45 / hour</strong></p><a href="#booking">Book this service →</a></article><article class="card"><div class="service-icon">🎛️</div><h3>Track Mixing</h3><p>Balance vocals and instruments for a clear mix.</p><p class="price">From <strong>$60 / hour</strong></p><a href="#booking">Book this service →</a></article><article class="card"><div class="service-icon">🎙️</div><h3>Podcast Recording</h3><p>Record your conversation with clear, reliable sound.</p><p class="price">From <strong>$75 / hour</strong></p><a href="#booking">Book this service →</a></article></div></div></section>
-<section class="section container" id="works"><div class="works-box"><div><p class="eyebrow">OUR WORK</p><h2>Your project, your sound.</h2><p>From a first voice recording to a finished podcast, we help you take the next step.</p></div><div class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></section>
-<section class="section booking-section" id="booking"><div class="container booking-layout"><div class="section-title"><p class="eyebrow">BOOKING</p><h2>Book your studio time</h2><p>Fill in the form and our team can contact you about your session.</p><p class="note"><strong>Need help?</strong><br>Tell us about your idea and we can recommend a service.</p></div>
-<form id="booking-form" class="booking-form"><div class="form-row"><label for="name">Name *<input id="name" name="name" type="text" placeholder="Your name" required></label><label for="phone">Phone *<input id="phone" name="phone" type="tel" placeholder="+1 555 010 2020" required></label></div>
-<label for="email">Email *<input id="email" name="email" type="email" placeholder="you@example.com" required></label><div class="form-row"><label for="date">Date *<input id="date" name="date" type="date" required></label><label for="duration">Session Duration *<select id="duration" name="duration" required><option value="">Choose duration</option><option>1 hour</option><option>2 hours</option><option>3 hours</option><option>Half day (4 hours)</option></select></label></div>
-<label class="checkbox-label"><input type="checkbox" name="engineer"> I would like a sound engineer.</label><label for="message">Project details<textarea id="message" name="message" rows="3" placeholder="What would you like to record?"></textarea></label>
-<button class="button" type="submit">Send Request →</button><p id="form-message" class="form-message" role="status" aria-live="polite"></p><p class="form-note">Demo form: your details are not sent to a server.</p></form></div></section>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Crystal Clear Sound for Your Music and Podcasts</h1>
+      <p class="intro">Acoustically treated rooms, quality microphones and engineers who help you finish the track.</p>
+      <a class="button" href="#booking">Book Studio Time</a>
+    </div>
+  </section>
+ 
+  <section class="section container" id="equipment">
+    <h2>Equipment</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Microphones</h3>
+        <p>Large-diaphragm condenser and dynamic microphones for vocals and speech.</p>
+      </article>
+      <article class="card">
+        <h3>Monitoring</h3>
+        <p>Studio monitors and closed headphones for accurate sound.</p>
+      </article>
+      <article class="card">
+        <h3>Acoustic Booth</h3>
+        <p>Treated vocal booth with low noise floor and no echo.</p>
+      </article>
+    </div>
+  </section>
+ 
+  <section class="section container" id="services">
+    <h2>Services and prices</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Vocal Recording</h3>
+        <p>Record vocals with an engineer in a treated booth.</p>
+        <p class="price">from 8 000 &#8376; / hour</p>
+      </article>
+      <article class="card">
+        <h3>Track Mixing</h3>
+        <p>Balance vocals and instruments into a clean, loud mix.</p>
+        <p class="price">from 10 000 &#8376; / hour</p>
+      </article>
+      <article class="card">
+        <h3>Turnkey Podcast</h3>
+        <p>Recording, editing and mastering of your episode.</p>
+        <p class="price">from 12 000 &#8376; / hour</p>
+      </article>
+    </div>
+  </section>
+ 
+  <section class="section container" id="works">
+    <h2>Our Works</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Debut EP</h3>
+        <p>Vocals recorded and mixed for a local indie artist.</p>
+      </article>
+      <article class="card">
+        <h3>Weekly Talk Show</h3>
+        <p>Podcast with three hosts, edited and delivered in 48 hours.</p>
+      </article>
+      <article class="card">
+        <h3>Audiobook</h3>
+        <p>Twelve chapters narrated, cleaned and mastered.</p>
+      </article>
+    </div>
+  </section>
+ 
+  <section class="section container" id="booking">
+    <h2>Book studio time</h2>
+    <form class="form" id="booking-form" action="#" method="post">
+      <label for="name">Name
+        <input type="text" id="name" name="name" placeholder="Your name" required minlength="2" autocomplete="name">
+      </label>
+      <label for="phone">Phone
+        <input type="tel" id="phone" name="phone" placeholder="+7 701 000 00 00" required pattern="[+0-9 ()\-]{7,}" autocomplete="tel">
+      </label>
+      <label for="email">Email
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      </label>
+      <label for="date">Date
+        <input type="date" id="date" name="date" required>
+      </label>
+      <label for="duration">Session Duration
+        <select id="duration" name="duration" required>
+          <option value="">Choose duration</option>
+          <option value="1">1 hour</option>
+          <option value="2">2 hours</option>
+          <option value="3">3 hours</option>
+          <option value="4">Half day (4 hours)</option>
+        </select>
+      </label>
+      <label class="check" for="engineer">
+        <input type="checkbox" id="engineer" name="engineer">
+        I need a sound engineer
+      </label>
+      <button class="button" type="submit">Send request</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
 </main>
-<footer class="footer"><div class="container footer-content"><div><a class="logo" href="#home">SoundSpace <span>Studio</span></a><p>Helping your ideas sound their best.</p></div><div><h3>Quick Links</h3><a href="#equipment">Equipment</a><a href="#services">Services</a><a href="#works">Our Works</a></div><div><h3>Contact</h3><a href="mailto:hello@soundspace.example">hello@soundspace.example</a><a href="tel:+15550102020">+1 555 010 2020</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> SoundSpace Studio</span><span>Terms and privacy information</span></div></footer>
-<!-- Website content and booking form -->
-</body></html>
+ 
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <section>
+      <h3>Listen</h3>
+      <ul>
+        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify</a></li>
+        <li><a href="https://music.apple.com/" target="_blank" rel="noopener">Apple Music</a></li>
+        <li><a href="https://music.youtube.com/" target="_blank" rel="noopener">YouTube Music</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Follow</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Legal</h3>
+      <p>&copy; 2026 SoundSpace Studio. All rights reserved.</p>
+      <p><a href="#home">Terms of use</a> &middot; <a href="#home">Privacy policy</a></p>
+    </section>
+    <section>
+      <h3>Theme</h3>
+      <button class="theme-button" type="button" aria-pressed="false">Switch to light theme</button>
+    </section>
+  </div>
+</footer>
+ 
+</body>
+</html>
